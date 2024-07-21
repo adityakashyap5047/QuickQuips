@@ -47,6 +47,13 @@ export async function GET(request: Request){
             {status: 200}
         )
     } catch (error) {
-        
+        console.log("An error occurred while getting messages", error)
+        return Response.json(
+            {
+                success: false,
+                message: "Failed to get messages"
+            },
+            {status: 500}
+        )
     }
 }
