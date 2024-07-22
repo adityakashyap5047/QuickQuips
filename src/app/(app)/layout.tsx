@@ -18,7 +18,10 @@ export default function RootLayout({
     <html lang="en">
         <body className={inter.className}>
           <Navbar/>
-          {children}
+            {children}
+          <footer className='md:p-6 p-4 text-center bg-gray-100 absolute bottom-0 w-full'>
+            <p>&copy; 2024 QuickQuips. All rights reserved.</p>
+          </footer>
         </body>
     </html>
   );

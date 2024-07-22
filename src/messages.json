@@ -1,0 +1,17 @@
+[
+    {
+        "title": "anonymousUser",
+        "content": "Hello, how are you doing today. I am looking for a job. Can you help me?",
+        "received": "10 minutes ago"
+    },
+    {
+        "title": "randomCodez",
+        "content": "I really like your coding style, can you help me with my project?",
+        "received": "1 hour ago"
+    },
+    {
+        "title": "adventureTime",
+        "content": "Hey, Do you know that the new season of Adventure Time is out?",
+        "received": "1 day ago"
+    }
+]
