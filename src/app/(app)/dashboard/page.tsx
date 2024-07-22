@@ -16,7 +16,7 @@ import { useRouter } from 'next/navigation'
 import { useCallback, useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 
-const page = () => {
+const Page = () => {
   const [messages, setMessages] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isSwitchLoading, setIsSwitchLoading] = useState<boolean>(false)
@@ -180,4 +180,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

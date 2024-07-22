@@ -14,7 +14,7 @@ import { signIn } from 'next-auth/react'
 import { useState } from 'react'
 import { Loader2 } from 'lucide-react'
 
-const page = () => {
+const Page = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -112,4 +112,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
