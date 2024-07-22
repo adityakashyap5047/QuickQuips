@@ -86,7 +86,7 @@ const Page = () => {
     if(!session || !session.user) return;
     fetchMessages()
     fetchAcceptMessage()
-  }, [session, setValue, fetchAcceptMessage, fetchMessages, session?.user?.username])
+  }, [session, setValue, fetchAcceptMessage, fetchMessages])
 
   //handle switch change
   const handleSwichChange = async () => {
@@ -112,7 +112,7 @@ const Page = () => {
   useEffect(() => {
     const baseurl = `${window.location.protocol}//${window.location.host}`
     setProfileUrl(`${baseurl}/u/${session?.user?.username}`)
-  }, [])
+  }, [session?.user?.username])
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(profileUrl)
