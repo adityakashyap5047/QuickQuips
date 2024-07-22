@@ -18,7 +18,7 @@ import { Loader2 } from 'lucide-react'
 
 const page = () => {
   const [username, setUsername] = useState('')
-  const [usernameMessage, serUsernameMessage] = useState('')
+  const [usernameMessage, setUsernameMessage] = useState('')
   const [isCheckingUsername, setIsCheckingUsername] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -41,14 +41,14 @@ const page = () => {
     const checkUsernameUnique = async () => {
       if(username) {
         setIsCheckingUsername(true)
-        serUsernameMessage('')
+        setUsernameMessage('')
         try {
           const response = await axios.get(`/api/check-username-unique?username=${username}`)
           let responseMessage = response.data.message
-          serUsernameMessage(responseMessage)
+          setUsernameMessage(responseMessage)
         } catch (error) {
           const axiosError = error as AxiosError<ApiResponse>;
-          serUsernameMessage(axiosError.response?.data.message || 'Error checking username')
+          setUsernameMessage(axiosError.response?.data.message || 'Error checking username')
         } finally {
           setIsCheckingUsername(false)
         }
