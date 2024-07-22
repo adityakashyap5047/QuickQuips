@@ -32,6 +32,16 @@ export async function POST(request: Request){
             )
         }
 
+        if(user.isVerified === false){  
+            return Response.json(
+                {
+                    success: false,
+                    message: "User is not verified"
+                },
+                {status: 403}
+            )
+        }
+
         const newMessage = {Content: content, createdAt: new Date()}
         user.messages.push(newMessage as Message);
         await user.save();
