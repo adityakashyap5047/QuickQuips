@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import axios from 'axios'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
@@ -49,6 +50,13 @@ const page = () => {
                     <p>No Users registered.</p>
                 )}
             </div>
+                    <Separator className="my-6" />
+                    <div className="text-center">
+                        <div className="mb-4">Get Your username</div>
+                        <Link href={'/sign-up'}>
+                        <Button>Create Your Account</Button>
+                        </Link>
+                    </div>
         </>
     )
 }
