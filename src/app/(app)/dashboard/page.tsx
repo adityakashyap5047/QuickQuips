@@ -1,6 +1,6 @@
 'use client'
 
-import MessageCard from "@/components/MessageCard"
+import  MessageCard  from '@/components/MessageCard'
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Switch } from "@/components/ui/switch"
@@ -11,8 +11,8 @@ import { ApiResponse } from "@/types/ApiResponse"
 import { zodResolver } from "@hookform/resolvers/zod"
 import axios, { AxiosError } from "axios"
 import { Loader2, RefreshCcw } from "lucide-react"
-import { User } from "next-auth"
 import { useSession } from "next-auth/react"
+import { useRouter } from 'next/navigation'
 import { useCallback, useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 
@@ -22,6 +22,7 @@ const page = () => {
   const [isSwitchLoading, setIsSwitchLoading] = useState<boolean>(false)
 
   const {toast} = useToast();
+  const router = useRouter();
 
   const handleDeleteMessage = (messageId: string) => {
     setMessages(messages.filter(message => message._id !== messageId))
@@ -119,15 +120,11 @@ const page = () => {
   }
 
   if(!session || !session.user){
-    return (
-      <div>
-        <h1>You need to be logged in to see this page</h1>
-      </div>
-    )
+    return router.push('/');
   }
 
   return (
-    <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 bg-white rounded w-full max-w-6xl">
+    <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 bg-white rounded max-w-6xl">
       <h1 className="text-4xl font-bold mb-6">User Dashboard</h1>
       <div className="mb-4">
         <h2 className="text-lg font-semibold mb-2">
@@ -167,7 +164,7 @@ const page = () => {
           {messages.length > 0 ? (
             messages.map((message, index) => (
               <MessageCard
-                key={Math.floor(100000 + Math.random() * 900000)}
+                key={index}
                 message={message}
                 onMessageDelete={handleDeleteMessage} 
               />

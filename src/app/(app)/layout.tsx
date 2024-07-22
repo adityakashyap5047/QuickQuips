@@ -17,11 +17,15 @@ export default function RootLayout({
   return (
     <html lang="en">
         <body className={inter.className}>
+          <div className="flex flex-col justify-between min-h-screen">
           <Navbar/>
+          <div className="wrapper flex-1">
             {children}
-          <footer className='md:p-6 p-4 text-center bg-gray-100 absolute bottom-0 w-full'>
+          </div>
+          <footer className='md:p-6 p-4 text-center bg-gray-100'>
             <p>&copy; 2024 QuickQuips. All rights reserved.</p>
           </footer>
+          </div>
         </body>
     </html>
   );
