@@ -37,7 +37,7 @@ const Page = () => {
             <div className="mt-4 mx-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                 {userName.length > 0 ? (
                     userName.map((name, index) => (
-                        <Card className="card-bordered">
+                        <Card className="card-bordered" key={index}>
                             <CardHeader>
                             <div className="flex justify-between items-center">
                                 <CardTitle>@<i>{name}</i></CardTitle>
