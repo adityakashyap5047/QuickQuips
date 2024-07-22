@@ -96,7 +96,7 @@ export default function SendMessage() {
   };
 
   return (
-    <div className="container mx-auto mb-8 p-6 bg-white rounded max-w-4xl">
+    <div className="container mx-auto mt-1 mb-8 p-6 bg-white rounded max-w-4xl">
       <h1 className="text-4xl font-bold mb-6 text-center">
         Public Profile Link
       </h1>
@@ -151,7 +151,7 @@ export default function SendMessage() {
           </CardHeader>
           <CardContent className="flex flex-col space-y-4">
             {error ? (
-              <p className="text-red-500">{error.message}</p>
+              <p className="text-red-500">This feature is only available for <i>premium members</i>, please check your plan and billing details.</p>
             ) : (
               parseStringMessages(completion).map((message, index) => (
                 <Button

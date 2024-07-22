@@ -10,9 +10,9 @@ export async function sendVerificationEmail(
     try {
         await resend.emails.send({
             from: 'onboarding@resend.dev',
-            to: email,
+            to: 'adityakumar20050510@gmail.com',
             subject: 'QuickQuips Verification Code',
-            react: VerificationEmail({username, otp: verifyCode}),
+            react: VerificationEmail({username, otp: verifyCode, email}),
         });
         return {success: true, message: "Verification email send successfully"};
     } catch (emailError) {
