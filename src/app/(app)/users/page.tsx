@@ -37,7 +37,14 @@ const Page = () => {
             <div className="mt-4 mx-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                 {userName.length > 0 ? (
                     userName.map((name, index) => (
-                        <p key={index}>{name}</p>
+                        <Card className="card-bordered" key={name}>
+                        <CardHeader>
+                            <div className="flex justify-between items-center">
+                            <CardTitle>@<i>{name}</i></CardTitle>
+                            <Button onClick={() => handleSendMessage(name)}>Send Message</Button>
+                            </div>
+                        </CardHeader>
+                        </Card>
                     ))
                 ) : (
                     <p>No Users registered.</p>
