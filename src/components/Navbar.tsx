@@ -44,12 +44,15 @@ const Navbar = () => {
 
   return (
     <nav className='p-4 md:p-6 shadow-md'>
-        <div className='container mx-auto flex flex-col md:flex-row justify-between items-center'>
+        <div className='mx-auto flex md:flex-row justify-between items-center'>
             <a className='text-xl font-bold mb-4 md:mb-0' href="/">QuickQuips</a>
             {
                 session ? (
                     <>
-                        <span className='mr-4'>Welcome, {user?.username || user?.email}</span>
+                        <div className='mr-4 flex flex-col sm:flex-row sm:gap-2'>
+                            <div>Welcome,</div> 
+                            <div className='font-semibold'>@<i>{user?.username || user?.email}</i></div>
+                        </div>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Avatar className='border cursor-pointer bg-sky-500 flex justify-center items-center text-lg'>{avtarName[0].toUpperCase()}</Avatar>
