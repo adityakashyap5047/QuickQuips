@@ -1,4 +1,4 @@
-# Anonymous Messaging App
+# QuickQuips - Anonymous Messaging App
 
 This is an anonymous messaging app built with Next.js, TypeScript, MongoDB, Zod, NextAuth, OpenAI, Shadcn, and Resend for email. In this app, anyone can send messages to everyone, and the identity of the sender will be hidden.
 
@@ -35,5 +35,5 @@ This is an anonymous messaging app built with Next.js, TypeScript, MongoDB, Zod,
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-username/anonymous-messaging-app.git
-   cd anonymous-messaging-app
+   git clone https://github.com/adityakashyap5047/QuickQuips.git
+   cd QuickQuips
