@@ -17,7 +17,7 @@ const Page = () => {
     useEffect(() => {
         const getUsers = async () => {
             try {
-                const {data} = await axios.get(`/api/get-users`)
+                const { data } = await axios.get(`/api/get-users?timestamp=${new Date().getTime()}`);
                 setUsername(data.users)
             } catch (error) {
                 console.error("An error occurred while getting users", error)
