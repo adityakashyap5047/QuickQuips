@@ -37,3 +37,10 @@ This is an anonymous messaging app built with Next.js, TypeScript, MongoDB, Zod,
    ```sh
    git clone https://github.com/adityakashyap5047/QuickQuips.git
    cd QuickQuips
+   
+2. Install dependencies:
+
+   ```sh
+   npm install
+
+
