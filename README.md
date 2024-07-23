@@ -43,4 +43,54 @@ This is an anonymous messaging app built with Next.js, TypeScript, MongoDB, Zod,
    ```sh
    npm install
 
+3. Set up environment variables:
 
+   Create a `.env` file in the root directory and add the following variables:
+   ```sh
+   MONGODB_URI=
+   RESEND_API_KEY=
+   NEXTAUTH_SECRET=
+   OPENAI_API_KEY=
+
+### Running the App
+1. Start the development server:
+   ```sh
+   npm run dev
+2. Open `http://localhost:3000` in your browser to see the app.
+
+### Building for Production
+1. Build the app:
+   ```sh
+   npm run build
+2. Start the production server:
+   ```sh
+   npm start
+   
+## Folder Structure
+   .
+├── components
+│   └── MessageComponent.tsx
+├── lib
+│   ├── mongodb.ts
+│   ├── nextauth.ts
+│   └── openai.ts
+├── pages
+│   ├── api
+│   │   ├── auth
+│   │   │   └── [...nextauth].ts
+│   │   ├── messages
+│   │   │   └── index.ts
+│   └── index.tsx
+├── prisma
+│   └── schema.prisma
+├── public
+│   └── ...
+├── styles
+│   └── globals.css
+├── utils
+│   └── validation.ts
+├── .env.local
+├── README.md
+├── next.config.js
+├── package.json
+└── tsconfig.json
