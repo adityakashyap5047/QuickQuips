@@ -95,6 +95,7 @@ This is an anonymous messaging app built with Next.js, TypeScript, MongoDB, Zod,
    ├── next.config.js
    ├── package.json
    └── tsconfig.json
-
+```
 ## Contributing
 Contributions are welcome! Please fork the repository and create a pull request.
+
