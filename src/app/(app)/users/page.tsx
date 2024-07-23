@@ -1,7 +1,6 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import axios from 'axios'
 import Link from 'next/link'
@@ -17,7 +16,7 @@ const Page = () => {
     useEffect(() => {
         const getUsers = async () => {
             try {
-                const { data } = await axios.get(`/api/get-users?timestamp=${new Date().getTime()}`);
+                const { data } = await axios.get(`/api/get-users`);
                 setUsername(data.users)
             } catch (error) {
                 console.error("An error occurred while getting users", error)
@@ -46,13 +45,13 @@ const Page = () => {
                     <p>No Users registered.</p>
                 )}
             </div>
-                    <Separator className="my-6" />
-                    <div className="text-center">
-                        <div className="mb-4">Get Your username</div>
-                        <Link href={'/sign-up'}>
-                        <Button>Create Your Account</Button>
-                        </Link>
-                    </div>
+            <Separator className="my-6" />
+            <div className="text-center">
+                <div className="mb-4">Get Your username</div>
+                <Link href={'/sign-up'}>
+                <Button>Create Your Account</Button>
+                </Link>
+            </div>
         </>
     )
 }
