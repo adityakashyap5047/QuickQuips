@@ -67,30 +67,34 @@ This is an anonymous messaging app built with Next.js, TypeScript, MongoDB, Zod,
    npm start
    
 ## Folder Structure
+   ```sh
    .
-├── components
-│   └── MessageComponent.tsx
-├── lib
-│   ├── mongodb.ts
-│   ├── nextauth.ts
-│   └── openai.ts
-├── pages
-│   ├── api
-│   │   ├── auth
-│   │   │   └── [...nextauth].ts
-│   │   ├── messages
-│   │   │   └── index.ts
-│   └── index.tsx
-├── prisma
-│   └── schema.prisma
-├── public
-│   └── ...
-├── styles
-│   └── globals.css
-├── utils
-│   └── validation.ts
-├── .env.local
-├── README.md
-├── next.config.js
-├── package.json
-└── tsconfig.json
+   ├── components
+   │   └── MessageComponent.tsx
+   ├── lib
+   │   ├── mongodb.ts
+   │   ├── nextauth.ts
+   │   └── openai.ts
+   ├── pages
+   │   ├── api
+   │   │   ├── auth
+   │   │   │   └── [...nextauth].ts
+   │   │   ├── messages
+   │   │   │   └── index.ts
+   │   └── index.tsx
+   ├── prisma
+   │   └── schema.prisma
+   ├── public
+   │   └── ...
+   ├── styles
+   │   └── globals.css
+   ├── utils
+   │   └── validation.ts
+   ├── .env.local
+   ├── README.md
+   ├── next.config.js
+   ├── package.json
+   └── tsconfig.json
+
+## Contributing
+Contributions are welcome! Please fork the repository and create a pull request.
