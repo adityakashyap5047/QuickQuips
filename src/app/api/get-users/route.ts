@@ -12,7 +12,15 @@ export async function GET(request: Request){
                     success: false,
                     message: "Failed to get users"
                 },
-                {status: 401}
+                {
+                    status: 401,
+                    headers: {
+                        'Cache-Control': 'no-store',
+                        'Pragma': 'no-cache',
+                        'Expires': '0',
+                        'Content-Type': 'application/json'
+                    }
+                }
             )
         }
         return Response.json(
@@ -20,7 +28,15 @@ export async function GET(request: Request){
                 success: true,
                 users: users.map(user => user.username)
             },
-            {status: 200}
+            {
+                status: 200,
+                headers: {
+                    'Cache-Control': 'no-store',
+                    'Pragma': 'no-cache',
+                    'Expires': '0',
+                    'Content-Type': 'application/json'
+                }
+            }
         )
     } catch (error) {
         console.error("An error occurred while getting users", error)
@@ -29,7 +45,15 @@ export async function GET(request: Request){
                 success: false,
                 message: "Failed to get users"
             },
-            {status: 500}
+            {
+                status: 200,
+                headers: {
+                    'Cache-Control': 'no-store',
+                    'Pragma': 'no-cache',
+                    'Expires': '0',
+                    'Content-Type': 'application/json'
+                }
+            }
         )
     }
 }
