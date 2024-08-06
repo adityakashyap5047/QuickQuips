@@ -18,6 +18,7 @@ const Page = () => {
         const getUsers = async () => {
             try {
                 const { data } = await axios.get<ApiResponse>(`/api/get-users`);
+                console.log(data);
                 setUsername(data.users || [])
             } catch (error) {
                 console.error("An error occurred while getting users", error)
