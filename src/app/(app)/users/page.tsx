@@ -6,7 +6,7 @@ import { ApiResponse } from '@/types/ApiResponse'
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 const Page = () => {
 
@@ -14,18 +14,19 @@ const Page = () => {
     
     const router = useRouter();
 
-    useEffect(() => {
-        const getUsers = async () => {
-            try {
-                const { data } = await axios.get<ApiResponse>(`/api/get-users`);
-                console.log(data);
-                setUsername(data.users || [])
-            } catch (error) {
-                console.error("An error occurred while getting users", error)
-            }
+    const fetchUsers = useCallback( async () => {
+        try {
+            const { data } = await axios.get<ApiResponse>(`/api/get-users`);
+            setUsername(data.users || [])
+        } catch (error) {
+            console.error("An error occurred while getting users", error)
         }
-        getUsers();
-    }, [])
+    }
+    , [setUsername])
+
+    useEffect(() => {
+        fetchUsers();
+    }, [fetchUsers])
 
     const handleSendMessage = (n: string) => {
         router.push(`/u/${n}`)
