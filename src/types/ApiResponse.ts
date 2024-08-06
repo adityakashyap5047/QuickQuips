@@ -5,4 +5,5 @@ export interface ApiResponse{
     message: string;
     isAcceptinMessage?: boolean;
     messages?: Array<Message>;
+    users?: Array<string>;
 }

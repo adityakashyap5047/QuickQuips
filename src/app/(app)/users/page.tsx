@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { ApiResponse } from '@/types/ApiResponse'
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -9,15 +10,15 @@ import React, { useEffect, useState } from 'react'
 
 const Page = () => {
 
-    const [userName, setUsername] = useState([]);
+    const [userName, setUsername] = useState<string[]>([]);
     
     const router = useRouter();
 
     useEffect(() => {
         const getUsers = async () => {
             try {
-                const { data } = await axios.get(`/api/get-users`);
-                setUsername(data.users)
+                const { data } = await axios.get<ApiResponse>(`/api/get-users`);
+                setUsername(data.users || [])
             } catch (error) {
                 console.error("An error occurred while getting users", error)
             }
@@ -34,7 +35,7 @@ const Page = () => {
             <h1 className='text-4xl p-6 font-semibold'> Our Users</h1>
             <Separator/>
             <div className="mt-4 mx-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {userName.length > 0 ? (
+                {userName?.length > 0 ? (
                     userName.map((name, index) => (
                         <div className='border shadow flex items-center justify-between p-6' key={name}>
                             <div className='font-bold text-lg'>@<i>{name}</i></div>
